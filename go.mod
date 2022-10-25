@@ -1,4 +1,4 @@
-module middleware
+module github.com/sujit-baniya/middleware
 
 go 1.19
 
