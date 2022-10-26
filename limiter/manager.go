@@ -1,16 +1,17 @@
 package limiter
 
 import (
+	"github.com/sujit-baniya/middleware/limiter/memory"
 	"sync"
 	"time"
 
 	contractStorage "github.com/sujit-baniya/framework/contracts/storage"
-	"github.com/sujit-baniya/framework/storage"
 )
 
 // go:generate msgp
 // msgp -file="manager.go" -o="manager_msgp.go" -tests=false -unexported
 // don't forget to replace the msgp import path to:
+// "github.com/gofiber/fiber/v2/internal/msgp"
 type item struct {
 	currHits int
 	prevHits int
@@ -20,11 +21,11 @@ type item struct {
 //msgp:ignore manager
 type manager struct {
 	pool    sync.Pool
-	memory  *storage.Storage
+	memory  *memory.Storage
 	storage contractStorage.Storage
 }
 
-func newManager(st contractStorage.Storage) *manager {
+func newManager(storage contractStorage.Storage) *manager {
 	// Create new storage handler
 	manager := &manager{
 		pool: sync.Pool{
@@ -33,12 +34,12 @@ func newManager(st contractStorage.Storage) *manager {
 			},
 		},
 	}
-	if st != nil {
+	if storage != nil {
 		// Use provided storage if provided
-		manager.storage = st
+		manager.storage = storage
 	} else {
 		// Fallback too memory storage
-		manager.memory = storage.New()
+		manager.memory = memory.New()
 	}
 	return manager
 }

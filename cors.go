@@ -170,7 +170,7 @@ func Cors(config ...ConfigCors) http.HandlerFunc {
 		}
 
 		// Send 204 No Content
-		return c.String(utils.StatusNoContent, "")
+		return c.String("")
 	}
 }
 
