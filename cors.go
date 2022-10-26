@@ -163,13 +163,9 @@ func Cors(config ...ConfigCors) http.HandlerFunc {
 				c.SetHeader(utils.HeaderAccessControlAllowHeaders, h)
 			}
 		}
-
-		// Set MaxAge is set
 		if cfg.MaxAge > 0 {
 			c.SetHeader(utils.HeaderAccessControlMaxAge, maxAge)
 		}
-
-		// Send 204 No Content
 		return c.String("")
 	}
 }
