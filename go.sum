@@ -11,3 +11,5 @@ github.com/stretchr/testify v1.3.0 h1:TivCn/peBQ7UY8ooIcPgZFpTNSz0Q2U6UrFlUfqbe0
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/sujit-baniya/framework v1.0.14 h1:1SUr6oJeVGthbVh9ntXLGF4riJg2p60v+aM1GyQA87Q=
 github.com/sujit-baniya/framework v1.0.14/go.mod h1:KGOxMywI3UO7mU6Cvat+whJDe5ayVa0+51NI3j2Hmco=
+github.com/sujit-baniya/framework v1.0.15 h1:sUJKsUU71FAKimf2PxgRMd5wdfnoVMcDxEjSe2qMF38=
+github.com/sujit-baniya/framework v1.0.15/go.mod h1:dw2sHm1t7kVahRTQmTdKIP4hRo/jr9N0Joh+Dxyv4Bo=
